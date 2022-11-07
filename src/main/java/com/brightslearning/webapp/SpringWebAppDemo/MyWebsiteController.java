@@ -1,10 +1,12 @@
 package com.brightslearning.webapp.SpringWebAppDemo;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class MyWebsiteController {
@@ -21,5 +23,12 @@ public class MyWebsiteController {
                 "<input name=\"food\" placeholder=\"A meal\">\n" +
                 "<button>Go</button>\n" +
                 "</form>");
+    }
+
+
+    @GetMapping("/hi")
+    @ResponseBody
+    public String somethingMore() {
+        return "<h1>My name is Erik</h1>";
     }
 }
