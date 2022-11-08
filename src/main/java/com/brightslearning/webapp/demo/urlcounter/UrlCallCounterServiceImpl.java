@@ -1,4 +1,4 @@
-package com.brightslearning.webapp.SpringWebAppDemo;
+package com.brightslearning.webapp.demo.urlcounter;
 
 import org.springframework.stereotype.Service;
 

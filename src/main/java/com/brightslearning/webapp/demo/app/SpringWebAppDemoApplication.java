@@ -1,4 +1,4 @@
-package com.brightslearning.webapp.SpringWebAppDemo;
+package com.brightslearning.webapp.demo.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

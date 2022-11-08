@@ -1,11 +1,11 @@
-package com.brightslearning.webapp.SpringWebAppDemo;
+package com.brightslearning.webapp.demo.language;
 
 import org.springframework.stereotype.Service;
 
 @Service
 public class LanguageServiceImpl implements LanguageService {
     @Override
-    public String getMyNameIs(String language) {
+    public String getGoodDayFor(String language) {
         switch (language) {
             case "de":
                 return "Guten Tag";
