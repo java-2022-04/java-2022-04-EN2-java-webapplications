@@ -1,7 +1,8 @@
 package com.brightslearning.webapp.demo.controller;
 
-import com.brightslearning.webapp.demo.language.LanguageService;
-import com.brightslearning.webapp.demo.urlcounter.UrlCallCounterService;
+import com.brightslearning.webapp.demo.service.language.LanguageService;
+import com.brightslearning.webapp.demo.service.language.LanguageServiceImpl;
+import com.brightslearning.webapp.demo.service.urlcounter.UrlCallCounterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -28,20 +29,21 @@ public class MyWebsiteController {
         String numberOfCallTimes = urlCallCounterService.getUrlCallCounterFor(name);
         String firstPart = languageService.getGoodDayFor(lang);
         String secondPart = languageService.getTimesCalledFor(lang);
-        return "<h1>" + firstPart + " " + name + "! " + secondPart + " " + name + ": " + numberOfCallTimes + "</h1>";
+        return String.format("<h1>%s %s!</h1> <p><b>%s %s</b> %s</p>",
+                firstPart, name, secondPart, name, numberOfCallTimes);
     }
 
     @PostMapping("/hello")
     public ResponseEntity<String> greeting(@RequestParam String name, @RequestParam String food) {
-        return ResponseEntity.ok("This is " + name + " and I like to eat " + food);
+        return ResponseEntity.ok(String.format("This is %s and I like to eat %s", name, food));
     }
 
     @GetMapping("/")
     public ResponseEntity<String> form() {
-        return ResponseEntity.ok("<form action=\"/hello\" method=\"POST\">\n" +
-                "<input name=\"name\" placeholder=\"Your name\">\n" +
-                "<input name=\"food\" placeholder=\"A meal\">\n" +
-                "<button>Go</button>\n" +
+        return ResponseEntity.ok("<form action=\"/hello\" method=\"POST\">" +
+                "<input name=\"name\" placeholder=\"Your name\">" +
+                "<input name=\"food\" placeholder=\"A meal\">" +
+                "<button>Go</button>" +
                 "</form>");
     }
 }

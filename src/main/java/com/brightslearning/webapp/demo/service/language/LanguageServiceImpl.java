@@ -1,4 +1,4 @@
-package com.brightslearning.webapp.demo.language;
+package com.brightslearning.webapp.demo.service.language;
 
 import org.springframework.stereotype.Service;
 

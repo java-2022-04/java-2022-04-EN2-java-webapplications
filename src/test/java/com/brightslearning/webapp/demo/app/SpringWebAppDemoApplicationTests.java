@@ -1,4 +1,4 @@
-package com.brightslearning.webapp.demo.language;
+package com.brightslearning.webapp.demo.app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
